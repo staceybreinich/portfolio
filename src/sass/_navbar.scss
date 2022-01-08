@@ -1,0 +1,127 @@
+.navbar {
+    background-color: $primary;
+    height: 80px;
+    font-size: 1.2rem;
+  
+    &__nav-logo {
+      display: flex;
+      color: $secondary;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 2rem;
+    }
+    
+    &__nav-logo:hover {
+      color: $secondary;
+    }
+      
+    &__nav-menu {
+      display: flex;
+      list-style: none;
+      text-align: center;
+    }
+    
+    & ul {
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+      
+    &__nav-links {
+      color: $secondary;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-bottom: 3px solid transparent;
+    }
+    
+    &__nav-links:hover {
+      color: $secondary;
+    }
+    
+    & .fa-code {
+      margin-left: 1rem;
+    }
+      
+    &__nav-item {
+      line-height: 40px;
+      margin-right: 1rem;
+    }
+    
+    &__nav-item:last-child {
+      margin-right: 0;
+    }
+      
+    &__nav-item:after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 0;
+      background: transparent;
+      transition: width 0.7s ease, background-color 0.5s ease;
+    }
+      
+    &__nav-item:hover:after {
+      width: 100%;
+      background: $link;
+    }
+      
+    &__nav-item .active {
+      color: $link;
+      border: none;
+    }
+      
+    &__nav-icon {
+      display: none;
+    }
+  
+    @media screen and (max-width: 960px) {
+        &__nav-menu {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 80px;
+            left: -110%;
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+      
+        &__nav-menu.active {
+            background: #000000;
+            left: 0px;
+        }
+        
+        &__nav-item .active {
+            color: $link;
+            border: none;
+        }
+        
+        &__nav-item:hover:after {
+            background: none;
+        }
+        
+        &__nav-logo {
+            margin-left: 10px;
+        }
+            
+        &__nav-links {
+            padding: 1.5rem;
+            display: table;
+        }
+        
+        &__nav-links:hover {
+            color: $link;
+        }
+        
+        &__nav-icon {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(-100%, 46%);
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: $link;
+        }
+    }
+}
